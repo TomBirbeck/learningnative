@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import FlatListComponent from './components/FlatList';
 import SectionListComponents from './components/SectionList';
 import Header from './components/Header';
+import ScrollViewComponent from './components/ScrollViewComp';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Text>App building?</Text>
       <FlatListComponent/>
       <SectionListComponents/>
+      <ScrollViewComponent/>
       <StatusBar style="auto"/>
     </View>
   );
