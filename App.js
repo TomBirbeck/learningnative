@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import FlatListComponent from './components/FlatList';
+import SectionListComponents from './components/SectionList';
 import Header from './components/Header';
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <TextInput type='number' placeholder='number here' style={styles.TextInput}/>
       <Text>App building?</Text>
       <FlatListComponent/>
+      <SectionListComponents/>
       <StatusBar style="auto"/>
     </View>
   );

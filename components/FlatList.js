@@ -1,8 +1,8 @@
-import {View, FlatList, Text} from 'react-native'
+import {View, FlatList, Text, StyleSheet} from 'react-native'
 
 const FlatListComponent = () => {
     return (
-      <View>
+      <View style={styles.flatlist}>
         <FlatList
           data={[
             {key: 'Dog'},
@@ -16,5 +16,14 @@ const FlatListComponent = () => {
       </View>
     );
   }
+
+  const styles = StyleSheet.create({
+    flatlist: {
+      flex: 1,
+      width: '100%',
+      backgroundColor: '#00FF00',
+      alignItems: 'flex-start',
+    },
+  });
   
   export default FlatListComponent;
