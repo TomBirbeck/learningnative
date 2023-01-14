@@ -1,31 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
-import FlatListComponent from './components/FlatList';
-import SectionListComponents from './components/SectionList';
-import Header from './components/Header';
-import ScrollViewComponent from './components/ScrollViewComp';
+import React from 'react';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header/>
-      <TextInput type='text' placeholder='text here' style={styles.TextInput}/>
-      <Text>Open up App.js to start working on your app!</Text>
-      <TextInput type='number' placeholder='number here' style={styles.TextInput}/>
-      <Text>App building?</Text>
-      <FlatListComponent/>
-      <SectionListComponents/>
-      <ScrollViewComponent/>
-      <StatusBar style="auto"/>
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Text style={styles.heading}>
+          Here are some boxes of different colours
+        </Text>
+        <Text style={[styles.box, styles.cyan]}>Cyan: #2aa198</Text>
+        <Text style={[styles.box, styles.blue]}>Blue: #268bd2</Text>
+        <Text style={[styles.box, styles.magenta]}>Magenta: #d33682</Text>
+        <Text style={[styles.box, styles.orange]}>Orange: #cb4b16</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: 'flex',
+    paddingTop: 50,
+    paddingHorizontal: 10,
+  },
+  heading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  box: {
+    padding: 10,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  cyan: {
+    backgroundColor: '#2aa198',
+  },
+  blue: {
+    backgroundColor: '#268bd2',
+  },
+  magenta: {
+    backgroundColor: '#d33682',
+  },
+  orange: {
+    backgroundColor: '#cb4b16',
   },
 });
