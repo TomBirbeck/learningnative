@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, FlatList, StyleSheet} from 'react-native'
+import { FlatList, Text, StyleSheet} from 'react-native'
 import ColourBox from "../components/ColourBox";
 
 const COLORS = [
@@ -23,7 +23,6 @@ const COLORS = [
 
 const ColourPalette = () => {
     return (
-        <SafeAreaView>
         <FlatList
           style={styles.container}
           data={COLORS}
@@ -33,7 +32,6 @@ const ColourPalette = () => {
           )}
           ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
         />
-      </SafeAreaView>
     )
 }
 
@@ -42,6 +40,7 @@ const styles = StyleSheet.create({
       display: 'flex',
       paddingTop: 50,
       paddingHorizontal: 10,
+      backgroundColor: 'white',
     },
     heading: {
       fontSize: 18,

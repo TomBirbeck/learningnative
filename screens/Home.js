@@ -1,10 +1,12 @@
 import React from "react";
-import {View, Text} from 'react-native'
+import {View, Text, TouchableOpacity} from 'react-native'
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <View>
+            <TouchableOpacity onPress={() => {navigation.navigate('ColourPalette')}}>
             <Text>Hello World!</Text>
+            </TouchableOpacity>
         </View>
     )
 }
