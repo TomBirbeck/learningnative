@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TouchableOpacity} from 'react-native'
+import {View, Text, TouchableOpacity, FlatList} from 'react-native'
 
 const SOLARIZED = [
     { colorName: 'Base03', hexCode: '#002b36' },
@@ -20,16 +20,38 @@ const SOLARIZED = [
     { colorName: 'Green', hexCode: '#859900' },
   ];
 
+  const RAINBOW = [
+    { colorName: 'Red', hexCode: '#FF0000' },
+    { colorName: 'Orange', hexCode: '#FF7F00' },
+    { colorName: 'Yellow', hexCode: '#FFFF00' },
+    { colorName: 'Green', hexCode: '#00FF00' },
+    { colorName: 'Violet', hexCode: '#8B00FF' },
+  ];
+  
+  const FRONTEND_MASTERS = [
+    { colorName: 'Red', hexCode: '#c02d28' },
+    { colorName: 'Black', hexCode: '#3e3e3e' },
+    { colorName: 'Grey', hexCode: '#8a8a8a' },
+    { colorName: 'White', hexCode: '#ffffff' },
+    { colorName: 'Orange', hexCode: '#e66225' },
+  ];
+
+  const COLOUR_PALETTES = [
+    { paletteName: 'Solarized', colours: SOLARIZED },
+    { paletteName: 'Frontend Masters', colours: FRONTEND_MASTERS },
+    { paletteName: 'Rainbow', colours: RAINBOW },
+  ];
+
 const Home = ({navigation}) => {
     return (
-        <View>
-            <TouchableOpacity onPress={() => {navigation.navigate('ColourPalette', {
-                paletteName: 'Solarized',
-                colours: SOLARIZED
-            })}}>
-            <Text>Solarized</Text>
+        <FlatList
+         data = {COLOUR_PALETTES}
+         keyExtractor={item => item.paletteName}
+         renderItem = {({item})=>(
+            <TouchableOpacity onPress={() => {navigation.navigate('ColourPalette',item)}}>
+            <Text>{item.paletteName}</Text>
             </TouchableOpacity>
-        </View>
+         )}/>
     )
 }
 
