@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native'
 import ColourBox from './components/ColourBox';
 
 const COLORS = [
@@ -23,6 +24,7 @@ const COLORS = [
 
 export default function App() {
   return (
+    <NavigationContainer>
     <SafeAreaView>
       <FlatList
         style={styles.container}
@@ -34,6 +36,7 @@ export default function App() {
         ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
       />
     </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
