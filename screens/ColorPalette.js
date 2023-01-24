@@ -1,17 +1,17 @@
 import React from "react";
 import { FlatList, Text, StyleSheet} from 'react-native'
-import ColourBox from "../components/ColourBox";
+import ColorBox from "../components/ColorBox";
 
 
-const ColourPalette = ({ route }) => {
-    const {colours, paletteName} = route.params
+const ColorPalette = ({ route }) => {
+    const {colors, paletteName} = route.params
     return (
         <FlatList
           style={styles.container}
-          data={colours}
+          data={colors}
           keyExtractor={(item) => item.hexCode}
           renderItem={({ item }) => (
-            <ColourBox hexCode={item.hexCode} colorName={item.colorName} />
+            <ColorBox hexCode={item.hexCode} colorName={item.colorName} />
           )}
           ListHeaderComponent={<Text style={styles.heading}>{paletteName}</Text>}
         />
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
   });
   
 
-export default ColourPalette
+export default ColorPalette
