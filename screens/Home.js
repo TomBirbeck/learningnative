@@ -1,5 +1,6 @@
 import React, {useCallback, useState, useEffect} from "react";
-import {StyleSheet, FlatList, RefreshControl} from 'react-native'
+import {StyleSheet, FlatList, Text} from 'react-native'
+import { TouchableOpacity } from "react-native-gesture-handler";
 import PalettePreview from "../components/PalettePreview";
 
 const Home = ({navigation}) => {
@@ -36,6 +37,7 @@ const Home = ({navigation}) => {
          )}
          refreshing={isRefreshing}
          onRefresh={()=>handleRefresh()}
+         ListHeaderComponent={<TouchableOpacity onPress={()=>{navigation.navigate('ColorPaletteModal')}}><Text>Launch Modal</Text></TouchableOpacity>}
          />
     )
 }
@@ -44,7 +46,6 @@ const styles = StyleSheet.create({
     list: {
         padding: 10,
         backgroundColor: 'white',
-    
     }
 })
 
