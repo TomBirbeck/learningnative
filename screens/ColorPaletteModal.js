@@ -190,6 +190,7 @@ const ColorPaletteModal = ({navigation}) => {
             keyExtractor={item => item.colorName}
             renderItem={({item}) => (
                 <View style={styles.color}>
+                <View style={[styles.previewSquare, {backgroundColor: item.hexCode}]}></View>
                 <Text>{item.colorName}</Text>
                 <Switch value={!!selectedColors.find(color=>color.colorName === item.colorName)} onValueChange={selected=>{handleValueChange(selected, item)}}/>
                 </View>
@@ -238,6 +239,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: 'grey'
     },
+    previewSquare:{
+        height:30,
+        width:30,
+        borderWidth: 1,
+        borderColor: 'grey',
+        borderRadius: 5,
+    }
 })
 
 export default ColorPaletteModal
